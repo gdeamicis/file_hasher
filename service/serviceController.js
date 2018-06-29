@@ -3,8 +3,7 @@ var router = express.Router();
 var formidable = require('formidable');
 var util = require('util');
 var store = require('store');
-const fs = require('fs');
-
+var fs = require('fs');
 
 router.post('/', function (req, res) {
     var crypto = require('crypto');
@@ -26,10 +25,10 @@ router.post('/', function (req, res) {
 
         fd.pipe(writeStream);
 
-        fd.on('data', () => {
+        fd.on('data', ( => {
             // show "progress" on console
             console.log('.');
-        })
+        });
 
         fd.on('end', () => {
             hash.end();
